@@ -56,6 +56,15 @@ public abstract class POIXMLDocument extends POIXMLDocumentPart{
 
     protected POIXMLDocument(OPCPackage pkg) {
         super(pkg);
+        init(pkg);
+    }
+    
+    protected POIXMLDocument(OPCPackage pkg, String coreDocumentRel) {
+        super(pkg, coreDocumentRel);
+        init(pkg);
+    }
+    
+    private void init(OPCPackage pkg) {
         this.pkg = pkg;
         
         // Workaround for XMLBEANS-512 - ensure that when we parse
